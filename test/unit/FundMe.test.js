@@ -44,7 +44,7 @@ describe("FundMe", function() {
 
         it("withdraw ETH from a single funder", async function() {
             const startingFundMeBalance = await fundMe.provider.getBalance(fundMe.address)
-            const startingDeployerBalance = await startingFundMeBalance.provider.getBalance(deployer)
+            const startingDeployerBalance = await fundMe.provider.getBalance(deployer)
 
             const transactionResponse = await fundMe.withdraw()
             const transactionReceipt = await transactionResponse.wait(1)
