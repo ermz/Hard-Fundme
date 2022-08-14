@@ -1,5 +1,5 @@
 const { assert, expect } = require("chai")
-const { deployments, ethers, getNamedAccounts } = require("hardhat")
+const { network, deployments, ethers, getNamedAccounts } = require("hardhat")
 
 describe("FundMe", function() {
     let fundMe
@@ -101,9 +101,15 @@ describe("FundMe", function() {
 
         it("Only allows the owner to withdraw", async function () {
             const accounts = await ethers.getSigners()
-            const attacker = accounts[8]
-            const attackerConnectedContract = await fundMe.connect(attacker)
+            const attackerConnectedContract = await fundMe.connect(accounts[1])
             await expect(attackerConnectedContract.withdraw()).to.be.reverted
+            // try {
+            //     await expect(attackerConnectedContract.withdraw()).to.be.revertedWith("FundMe__NotOwner")
+            // } catch (e) {
+            //     console.log(e)
+            // }
         })
+        
+        
     })
 })

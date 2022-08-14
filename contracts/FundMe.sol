@@ -4,7 +4,7 @@ pragma solidity ^0.8.9;
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
 
-error FundMe_NotOwner();
+error FundMe__NotOwner();
 
 /** @title A contract for crowd funding
  *  @author Edson Ramirez
@@ -25,7 +25,7 @@ contract FundMe {
 
     modifier onlyOwner {
         // require(msg.sender == owner);
-        if (msg.sender != i_owner) revert FundMe_NotOwner();
+        if (msg.sender != i_owner) revert FundMe__NotOwner();
         _;
     }
 
