@@ -24,6 +24,7 @@
     "typechain": "^8.1.0"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
     "hardhat-deploy": "^0.11.12"
   }
 }
