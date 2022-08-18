@@ -1,5 +1,6 @@
 {
   "name": "hard-fundme",
+  "author": "Edson Ramire",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -26,5 +27,11 @@
   "dependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.3",
     "hardhat-deploy": "^0.11.12"
+  },
+  "scripts": {
+    "test": "yarn hardhat test",
+    "test:staging": "yarn hardhat test --network rinkeby",
+    "format": "yarn prettier --write .",
+    "coverage": "yarn hardhat coverage"
   }
 }
